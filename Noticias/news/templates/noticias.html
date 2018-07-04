@@ -12,7 +12,7 @@
             <br>
             <h6>Comentarios</h6>
             {% for comentario in noticia.comentarios.all %}
-                {% endif %}
+                
             {% endfor %}
             <h5>Agregar un comentario</h5>
             <form method="POST" action="{% url 'agregar_comentario' noticia_id=noticia.id %}">

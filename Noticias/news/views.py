@@ -12,3 +12,7 @@ def añadir_Comentario(request, noticia_id):
     comentario.save()
     if comentario: return redirect("añadir_noticias")
     else: return HttpResponse("Error")
+
+#def like(request):
+	#like = Noticia.objects.get(id=like)
+	#nuevo_voto = 

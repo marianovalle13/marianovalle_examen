@@ -5,6 +5,8 @@ class Noticia(models.Model):
 	informacion = models.CharField("Informacion", max_length=780)
 	titulo = models.CharField("Titulo", max_length=120)
 	fecha = models.DateTimeField(auto_now=False, auto_now_add=False)
+	likes = models.PositiveIntegerField(default=0)
+	#photo = models.ImageField()
 
 	class Meta:
 		verbose_name = "Noticia"
