@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Noticias</title>
+    </head>
+    <body>
+        <h1>Bienvenido</h1>
+        {% for noticia in noticias %}
+            <h2>{{ noticia.titulo|title }}</h2>
+            <p>ID de noticia: {{ noticia.id }}</p>
+            <h6>{{ noticia.fecha }}</h6>
+            <p>{{ noticia.texto }}</p>
+            <br>
+            <h6>Comentarios</h6>
+            {% for comentario in noticia.comentarios.all %}
+                {% endif %}
+            {% endfor %}
+            <h5>Agregar un comentario</h5>
+            <form method="POST" action="{% url 'agregar_comentario' noticia_id=noticia.id %}">
+                {% csrf_token %}
+                <input type="textarea" placeholder="Comentar" name="comentario">
+                <button type="submit">Subir</button>
+            </form>
+        {% empty %}
+            <p>No hay noticias.</p>
+        {% endfor %}
+    </body>
+</html>
